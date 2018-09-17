@@ -41,6 +41,7 @@ static void log_malloc(const char *f) {
 
 static char *get_local_time(void)
 {
+	/* return the asctime to the calling function */
 	return NULL;
 }
 
