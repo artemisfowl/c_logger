@@ -16,7 +16,7 @@
 int main(void)
 {
 	/* first init the logger module */
-	LOG_INIT(INFO);
+	LOG_INIT(DEBUG);
 
 	/* Debug log */
 	LOGD("This is the debug log");

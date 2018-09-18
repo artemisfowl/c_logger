@@ -16,9 +16,9 @@
  * @brief The logging string for variable arguments
  * @details This is the logging string which will be used while writing to the
  * log file. The format will be having the following information:
- * log_level: __FILE__:__FUNCTION__[__LINE__]
+ * log_level: __TIME_STAMP__ __FILE__:__FUNCTION__[__LINE__]
  */
-#define LOG_STRF "%s%s:%s()[%ld]"
+#define LOG_STRF "%s %s%s:%s()[%ld]"
 
 /**
  * @brief The string format for basic string logging
