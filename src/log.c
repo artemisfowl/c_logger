@@ -16,6 +16,7 @@
 
 static char *lf;                        /* log filename */
 static enum log_level l;                /* log level */
+static bool linit = FALSE;		/* logging initialised or not */
 
 static const char *log_get_ll_identifier(enum log_level ll) {
         /* this function will be returning the log level identifier that
@@ -67,12 +68,15 @@ void log_init(const char *f, enum log_level ll) {
                 return;
         else
                 log_malloc(f);
+	linit = TRUE;
 }
 
 void log_write_fmt(const char *fmt, const char *fi, const char *fu, long ln,
                 int ll, ...) {
         if (!fmt)
                 return;                 /* nothing to log */
+	if (!linit)
+		return;			/* not initialised, nothing to log */
         va_list vp;                     /* variable argument pointer */
         va_start(vp, ll);               /* point vp to the first parameter */
         FILE *f = fopen(lf, "a+");      /* if file present - append,

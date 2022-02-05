@@ -44,6 +44,14 @@ enum log_level {
 };
 
 /**
+ * @brief enum containing the init states - FALSE(0) and TRUE
+ */
+enum init_state {
+	FALSE = 0,
+	TRUE
+};
+
+/**
  * @brief shortened version of the DEBUG level log_write_fmt function
  */
 #define LOGFD(x, ...) log_write_fmt(x, __FILE__, __FUNCTION__, __LINE__,\
