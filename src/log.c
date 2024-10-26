@@ -92,6 +92,7 @@ void log_write_fmt(const char *fmt, const char *fi, const char *fu, long ln,
 					   for writing */
 		fputc('\n', f);         /* as a precaution */
 	}
+
         fclose(f);                      /* close the file */
         va_end(vp);                     /* for portability purposes */
 }

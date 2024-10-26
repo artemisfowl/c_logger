@@ -15,11 +15,12 @@
 
 int main(void)
 {
+	/* fixme: first need to change the log_init macro call */
 	/* first init the logger module */
-	LOG_INIT(DEBUG);
+	init(DEBUG);
 
 	/* Debug log */
-	LOGD("This is the debug log");
+	LOGFD("This is the debug log");
 
 	/* Warning log */
 	LOGW("This is the warning log");

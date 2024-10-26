@@ -55,7 +55,7 @@ enum init_state {
  * @brief shortened version of the DEBUG level log_write_fmt function
  */
 #define LOGFD(x, ...) log_write_fmt(x, __FILE__, __FUNCTION__, __LINE__,\
-                DEBUG, __VA_ARGS__)
+                DEBUG, ##__VA_ARGS__)
 
 /**
  * @brief shortened version of the DEBUG level log_write_fmt function
@@ -99,7 +99,7 @@ enum init_state {
 /**
  * @brief default log file name provided while initializing the module
  */
-#define LOG_INIT(ll) log_init(DEFAULT_LOG_FILE, ll)
+#define init(ll) log_init(DEFAULT_LOG_FILE, ll)
 
 /**
  * @brief the logger module initiator
