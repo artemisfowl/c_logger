@@ -18,18 +18,19 @@ int main(void)
 	/* fixme: first need to change the log_init macro call */
 	/* first init the logger module */
 	init(DEBUG);
+	log_set_stream(TRUE, TRUE);
 
 	/* Debug log */
-	LOGFD("This is the debug log");
+	debug("This is the debug log");
 
 	/* Warning log */
-	LOGW("This is the warning log");
+	warning("This is the warning log");
 
 	/* Error log */
-	LOGE("This is the error log");
+	error("This is the error log");
 
 	/* Info log */
-	LOGI("This is the info log");
+	info("This is the info log");
 
 	/* free the resources */
 	log_free_lf();

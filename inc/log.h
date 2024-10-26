@@ -73,7 +73,7 @@ enum init_state {
  * @brief shortened version of the INFO level log_write_fmt function
  */
 #define info(x, ...) log_write_fmt(x, __FILE__, __FUNCTION__, __LINE__,\
-                INFO, __VA_ARGS__)
+                INFO, ##__VA_ARGS__)
 
 /**
  * @brief default log file name provided while initializing the module
@@ -89,6 +89,16 @@ enum init_state {
  * @note This function has to be called out if the logging needs to be done
  */
 void log_init(const char *f, enum log_level ll);
+
+/**
+ * @brief the logger module stream setter
+ * @param[in] ostream boolean - set to enable stdout streaming. By default, if
+ * this function is not called, logging to stdout is enabled.
+ * @param[in] fstream boolean - set to enable file streaming. By default, if
+ * this function is not called, logging to stdout is disabled.
+ * @note This function has to be called out if the logging needs to be done
+ */
+void log_set_stream(bool ostream, bool fstream);
 
 /**
  * @brief Variadic function for logging specific string format
