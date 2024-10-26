@@ -54,47 +54,26 @@ enum init_state {
 /**
  * @brief shortened version of the DEBUG level log_write_fmt function
  */
-#define LOGFD(x, ...) log_write_fmt(x, __FILE__, __FUNCTION__, __LINE__,\
+#define debug(x, ...) log_write_fmt(x, __FILE__, __FUNCTION__, __LINE__,\
                 DEBUG, ##__VA_ARGS__)
 
 /**
- * @brief shortened version of the DEBUG level log_write_fmt function
- */
-#define LOGD(x) log_write_fmt(x, __FILE__, __FUNCTION__, __LINE__, DEBUG)
-
-/**
  * @brief shortened version of the WARN level log_write_fmt function
  */
-#define LOGFW(x, ...) log_write_fmt(x, __FILE__, __FUNCTION__, __LINE__,\
-                WARN, __VA_ARGS__)
-
-/**
- * @brief shortened version of the WARN level log_write_fmt function
- */
-#define LOGW(x) log_write_fmt(x, __FILE__, __FUNCTION__, __LINE__, WARN)
-
+#define warning(x, ...) log_write_fmt(x, __FILE__, __FUNCTION__, __LINE__,\
+                WARN, ##__VA_ARGS__)
 
 /**
  * @brief shortened version of the ERROR level log_write_fmt function
  */
-#define LOGFE(x, ...) log_write_fmt(x, __FILE__, __FUNCTION__, __LINE__,\
-                ERROR, __VA_ARGS__)
-
-/**
- * @brief shortened version of the ERROR level log_write_fmt function
- */
-#define LOGE(x) log_write_fmt(x, __FILE__, __FUNCTION__, __LINE__, ERROR)
+#define error(x, ...) log_write_fmt(x, __FILE__, __FUNCTION__, __LINE__,\
+                ERROR, ##__VA_ARGS__)
 
 /**
  * @brief shortened version of the INFO level log_write_fmt function
  */
-#define LOGFI(x, ...) log_write_fmt(x, __FILE__, __FUNCTION__, __LINE__,\
+#define info(x, ...) log_write_fmt(x, __FILE__, __FUNCTION__, __LINE__,\
                 INFO, __VA_ARGS__)
-
-/**
- * @brief shortened version of the INFO level log_write_fmt function
- */
-#define LOGI(x, ...) log_write_fmt(x, __FILE__, __FUNCTION__, __LINE__, INFO)
 
 /**
  * @brief default log file name provided while initializing the module
